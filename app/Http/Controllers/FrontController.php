@@ -32,8 +32,9 @@ class FrontController extends Controller
     public function recherche(Request $request){
         $input=$request->input();
         $rech=$input['recherche'];
-        $article=Information::where('titre', 'like', '%'.$rech.'%')
-                                ->orWhere('descri', 'like', '%'.$rech.'%')
+        $mot=strtolower($rech);
+        $article=Information::whereRaw('lower(titre) like ?', ['%'.$mot.'%'])
+                                ->orWhereRaw('lower(descri) like ?', ['%'.$mot.'%'])
                                 ->get();
         return view('frontListe',[
             'info' => $article
@@ -41,8 +42,9 @@ class FrontController extends Controller
     }
 
     public function rech($rech){
-        $article=Information::where('titre', 'like', '%'.$rech.'%')
-                                ->orWhere('descri', 'like', '%'.$rech.'%')
+        $mot=strtolower($rech);
+        $article=Information::whereRaw('lower(titre) like ?', ['%'.$mot.'%'])
+                                ->orWhereRaw('lower(descri) like ?', ['%'.$mot.'%'])
                                 ->get();
         return view('frontListe',[
             'info' => $article

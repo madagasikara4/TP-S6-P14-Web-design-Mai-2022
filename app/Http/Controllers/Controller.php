@@ -22,8 +22,9 @@ class Controller extends BaseController
     public function recherche(Request $request){
         $input=$request->input();
         $rech=$input['recherche'];
-        $article=Information::where('titre', 'like', '%'.$rech.'%')
-                                ->orWhere('descri', 'like', '%'.$rech.'%')
+        $mot=strtolower($rech);
+        $article=Information::whereRaw('lower(titre) like ?', ['%'.$mot.'%'])
+                                ->orWhereRaw('lower(descri) like ?', ['%'.$mot.'%'])
                                 ->get();
         return view('liste',[
             'info' => $article
