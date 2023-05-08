@@ -8,9 +8,14 @@
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-12">
-          <h1>{{ $article->titre }} </h1>
-          <img src={{$article->photo}} alt="..." class="img-fluid">
-
+          <div class="w-50 mx-auto text-center justify-content-center py-5 my-5">
+            <h1 class="page-title mb-0">{{ $article->titre }} </h1>
+            <form class="searchform searchform-lg" method="post" action={{route('front_recherche')}}>
+            <img src={{$article->photo}} alt="..." class="img-fluid">
+               
+            </form>
+          </div>
+          
           
           <div class="row mt-5 align-items-center">
             
