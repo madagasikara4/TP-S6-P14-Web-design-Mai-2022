@@ -43,7 +43,7 @@
                       <div class="card-body">
                         <h5 class="card-title">Contenue</h5>
                         <!-- Create the editor container -->
-                        <textarea id="editor" name="contenue" value={{ $article->contenue}}> </textarea>
+                        <textarea id="editor" name="contenue" > <?php echo($article->contenue)?></textarea>
                       </div>
                     </div>
                   </div>
