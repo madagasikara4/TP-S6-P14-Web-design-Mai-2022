@@ -10,10 +10,9 @@
         <div class="col-12">
           <div class="w-50 mx-auto text-center justify-content-center py-5 my-5">
             <h1 class="page-title mb-0">{{ $article->titre }} </h1>
-            <form class="searchform searchform-lg" method="post" action={{route('front_recherche')}}>
             <img src={{$article->photo}} alt="..." class="img-fluid">
                
-            </form>
+            
           </div>
           
           
