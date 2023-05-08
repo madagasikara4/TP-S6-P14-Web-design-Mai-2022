@@ -39,11 +39,11 @@
             <?php } ?>
             <div class="form-group">
                 <label for="inputEmail" class="sr-only">Identifiant</label>
-                <input type="text" class="form-control form-control-lg" placeholder="Identifiant" required="" autofocus="" name="identifiant">
+                <input type="text" class="form-control form-control-lg" placeholder="Identifiant" required="" autofocus="" name="identifiant" value="admin01">
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control form-control-lg" placeholder="Password" required="" name="mdp">
+                <input type="password" id="inputPassword" class="form-control form-control-lg" placeholder="Password" required="" name="mdp" value="admin01">
             </div>
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Let me in</button>
