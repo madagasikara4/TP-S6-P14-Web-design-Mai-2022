@@ -10,10 +10,9 @@ use Illuminate\Support\Facades\Cache;
 class FrontController extends Controller
 {
     public function fiche($id){
-        
-        $list=Cache::remember('fiches',300,function () use($id){
-            $i=explode('-',$id);
-            $index=$i[0];
+        $i=explode('-',$id);
+        $index=$i[0];
+        $list=Cache::remember('fiches'.$index,300,function () use($index){
             return Information::find($index);
         });
         $response = response()->view('frontfiche',['article' => $list]);
